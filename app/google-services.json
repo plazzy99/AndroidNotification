@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1024444188593",
+    "firebase_url": "https://fcmexample-8404a.firebaseio.com",
+    "project_id": "fcmexample-8404a",
+    "storage_bucket": "fcmexample-8404a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024444188593:android:6d3ab39d738cc5a513df90",
+        "android_client_info": {
+          "package_name": "com.vatsal.kesarwani.fcmexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024444188593-cor8bnpa1ckf69rv5tc1658pa4fl5vg1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMpqTkw_L19LrGUJEdyMfoc6DPyWuF6tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024444188593-cor8bnpa1ckf69rv5tc1658pa4fl5vg1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
