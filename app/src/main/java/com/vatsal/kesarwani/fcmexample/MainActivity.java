@@ -5,6 +5,10 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import android.app.Notification;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,12 +37,26 @@ public class MainActivity extends AppCompatActivity {
                 title=tit.getText().toString();
                 message=mssg.getText().toString();
 
+                Intent activityIntent = new Intent(MainActivity.this , MainActivity.class);
+                PendingIntent contentIntent = PendingIntent.getActivity(MainActivity.this,
+                        0,activityIntent,0);
+
+                Intent broadCastIntent = new Intent(MainActivity.this,NotificationReceiver.class);
+                broadCastIntent.putExtra("toastMessage",message);
+                PendingIntent actionIntent = PendingIntent.getBroadcast(MainActivity.this,
+                        0,broadCastIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
                 Notification notification =new NotificationCompat.Builder(MainActivity.this,CHANNEL_1_ID)
                         .setSmallIcon(R.drawable.ic_one)
                         .setContentTitle(title)
                         .setContentText(message)
                         .setPriority(NotificationCompat.PRIORITY_HIGH)
                         .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                        .setContentIntent(contentIntent)
+                        .setColor(Color.BLUE)
+                        .setAutoCancel(true)
+                        .addAction(R.mipmap.ic_launcher,"Toast",actionIntent)
+                        .setOnlyAlertOnce(true)
                         .build();
 
                 notificationManager.notify(1,notification);
