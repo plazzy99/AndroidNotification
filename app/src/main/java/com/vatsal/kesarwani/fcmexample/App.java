@@ -29,7 +29,7 @@ public class App extends Application {
             NotificationChannel channel_2=new NotificationChannel(
                     CHANNEL_2_ID,
                     "channel 2",
-                    NotificationManager.IMPORTANCE_LOW
+                    NotificationManager.IMPORTANCE_HIGH
             );
             channel_1.setDescription("This is channel 2");
 
